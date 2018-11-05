@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="27475" started-at="2018-11-04T18:38:32Z" finished-at="2018-11-04T18:38:59Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="27475" started-at="2018-11-04T18:38:32Z" finished-at="2018-11-04T18:38:59Z">
+      <class name="com.computerDB.create.Create001">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.computerDB.create.Create001@6d7b4f4c]" name="setUp" is-config="true" duration-ms="21195" started-at="2018-11-04T18:38:32Z" finished-at="2018-11-04T18:38:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[FireFox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="createPositiveTestCase()[pri:0, instance:com.computerDB.create.Create001@6d7b4f4c]" name="createPositiveTestCase" duration-ms="3166" started-at="2018-11-04T18:38:53Z" finished-at="2018-11-04T18:38:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createPositiveTestCase -->
+        <test-method status="PASS" signature="tearDownTest()[pri:0, instance:com.computerDB.create.Create001@6d7b4f4c]" name="tearDownTest" is-config="true" duration-ms="3018" started-at="2018-11-04T18:38:56Z" finished-at="2018-11-04T18:38:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownTest -->
+      </class> <!-- com.computerDB.create.Create001 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
