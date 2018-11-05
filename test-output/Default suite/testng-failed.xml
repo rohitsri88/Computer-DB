@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.computerDB.create.Create001">
+      <class name="com.computerDB.read.Read001">
         <methods>
           <include name="tearDownTest"/>
           <include name="setUp"/>
-          <include name="createPositiveTestCase"/>
+          <include name="readPositiveTestCase"/>
         </methods>
-      </class> <!-- com.computerDB.create.Create001 -->
+      </class> <!-- com.computerDB.read.Read001 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -43,10 +43,12 @@ public class AddComputerPage extends BaseTestClass {
 		CommonFunctions.fillData(introducedDate, driver, intriducedDateVariable, "Introduction Date Control");
 		CommonFunctions.fillData(DiscontinuedDate, driver, discontinuedDateVariable, "Disconnection Control");
 		CommonFunctions.selectData(companyName, driver, companyNameVariable, "Company Dropdown");
+		LoggingClass.getLogger().info("Details Filled Succesfully");
 	}
 	public HomePage navigateToNextPage(HashMap<String, String>data,WebDriver driver){
 	CommonFunctions.clickElement(createThisComputer, driver, "Click on Home Page");	
 	HomePage ob =new HomePage();
+	LoggingClass.getLogger().info("Page Loaded");
 	return ob;
 	}
 }

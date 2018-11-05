@@ -12,7 +12,7 @@ import org.testng.Assert;
 
 import com.computerDB.util.CommonFunctions;
 
-public class HomePage {
+public class HomePage  {
 	AddComputerPage addComputerPage;
 
 	@FindBy(how=How.ID, using ="add")
@@ -21,6 +21,9 @@ public class HomePage {
 	
 	@FindBy(how=How.XPATH, using ="//input[@id='searchsubmit']")
 	 private WebElement filterByName;
+	
+	@FindBy(how=How.ID, using ="searchbox")
+	 private WebElement searchComputerName;
 	
 	
 	@FindBy(how=How.XPATH, using ="//div[@class='alert-message warning']")
@@ -43,11 +46,28 @@ public void ValidateCountComputer(WebDriver driver){
 		
 		
 	}
+public void fillDetails(WebDriver driver, HashMap<String, String> data){
+	String computerNameToSearch = data.get("ComputeName").toString();
+	CommonFunctions.fillData(searchComputerName, driver, computerNameToSearch, "Srearch Text Box");
+	LoggingClass.getLogger().info("Computer Name filled Successfuly!!");
+	
+}
 	public AddComputerPage NavigateToAddCompterPage(WebDriver driver,HashMap<String, String> testdata){
 		CommonFunctions.clickElement(addComputer, driver, "Add New Computer Button");
 		addComputerPage = PageFactory.initElements(driver, AddComputerPage.class);
+		LoggingClass.getLogger().info("Page Loaded");
 		return addComputerPage;
 		
 	}
+	public void NavigateToReadPage(WebDriver driver,HashMap<String, String> data){
+		CommonFunctions.clickElement(filterByName, driver, "Filter Button");
+		LoggingClass.getLogger().info("Page Loaded");
+		//return new HomePage();
+		
+	}
+	public String verifyMessage(WebDriver driver){
+		return driver.getPageSource();
+	}
+
 	
 }
