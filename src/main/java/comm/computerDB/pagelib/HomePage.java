@@ -23,6 +23,9 @@ public class HomePage {
 	 private WebElement filterByName;
 	
 	
+	@FindBy(how=How.XPATH, using ="//div[@class='alert-message warning']")
+	 private WebElement successMsg;
+	
 	public void verifyPage(WebDriver driver){
 		
 		
@@ -30,10 +33,13 @@ public class HomePage {
 		
 		
 	}
+	public String getMessage(){
+		return successMsg.getText();
+	}
 public void ValidateCountComputer(WebDriver driver){
 		
 		
-		Assert.assertTrue(driver.get(filterByName, driver));
+		//Assert.assertTrue(driver.get(filterByName, driver));
 		
 		
 	}

@@ -3,6 +3,7 @@ package com.computerDB.create;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.computerDB.util.ReadXlsx;
@@ -25,6 +26,8 @@ public class Create001 extends BaseTestClass {
 			addComputerPage = homePage.NavigateToAddCompterPage(driver, testData);
 			addComputerPage.fillDetails(testData, driver);
 			homePage =  addComputerPage.navigateToNextPage(testData, driver);
+			
+			Assert.assertEquals("AVN", homePage.getMessage());
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

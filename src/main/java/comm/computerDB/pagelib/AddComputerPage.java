@@ -41,7 +41,7 @@ public class AddComputerPage extends BaseTestClass {
 		String companyNameVariable = data.get("Company").toString();
 		CommonFunctions.fillData(cmputerName, driver, compName, "Name of Computer");
 		CommonFunctions.fillData(introducedDate, driver, intriducedDateVariable, "Introduction Date Control");
-		CommonFunctions.fillData(DiscontinuedDate, driver, compName, "Disconnection Control");
+		CommonFunctions.fillData(DiscontinuedDate, driver, discontinuedDateVariable, "Disconnection Control");
 		CommonFunctions.selectData(companyName, driver, companyNameVariable, "Company Dropdown");
 	}
 	public HomePage navigateToNextPage(HashMap<String, String>data,WebDriver driver){
