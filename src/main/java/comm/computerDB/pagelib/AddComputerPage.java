@@ -29,9 +29,7 @@ public class AddComputerPage extends BaseTestClass {
 	@FindBy(how=How.XPATH, using ="//*[@value='Create this computer']")
 	 private WebElement computrtCount;
 	
-	public static ReadyForWedding ([contains(text(),"msg)]){
-		
-	}
+	
 	
 	public void fillDetails(HashMap<String, String> data, WebDriver driver){
 		String compName = data.get("ComputeName").toString();

@@ -24,7 +24,7 @@ public class Create001 extends BaseTestClass {
 			homePage = verifyPageLoad();
 			addComputerPage = homePage.NavigateToAddCompterPage(driver, testData);
 			addComputerPage.fillDetails(testData, driver);
-			
+			homePage =  addComputerPage.navigateToNextPage(testData, driver, el)
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
