@@ -27,7 +27,7 @@ public class Create001 extends BaseTestClass {
 			addComputerPage.fillDetails(testData, driver);
 			homePage =  addComputerPage.navigateToNextPage(testData, driver);
 			
-			Assert.assertEquals("AVN", homePage.getMessage());
+			Assert.assertTrue(driver.getPageSource().contains("Done"));
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
