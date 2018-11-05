@@ -3,6 +3,7 @@ package comm.computerDB.pagelib;
 import java.util.HashMap;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -63,6 +64,17 @@ public void fillDetails(WebDriver driver, HashMap<String, String> data){
 		CommonFunctions.clickElement(filterByName, driver, "Filter Button");
 		LoggingClass.getLogger().info("Page Loaded");
 		//return new HomePage();
+		
+	}
+	public boolean checkValue(WebDriver driver,HashMap<String, String> data ){
+		
+		try{
+			driver.findElement(By.xpath(""));
+			return false;
+		}
+		catch (NoSuchElementException e) {
+			return false;
+		}
 		
 	}
 	public String verifyMessage(WebDriver driver){
