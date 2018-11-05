@@ -29,6 +29,9 @@ public class AddComputerPage extends BaseTestClass {
 	@FindBy(how=How.XPATH, using ="//*[@value='Create this computer']")
 	 private WebElement computrtCount;
 	
+	@FindBy(how=How.XPATH, using ="//input[@value='Create this computer']")
+	 private WebElement createThisComputer;
+	
 	
 	
 	public void fillDetails(HashMap<String, String> data, WebDriver driver){
@@ -41,8 +44,8 @@ public class AddComputerPage extends BaseTestClass {
 		CommonFunctions.fillData(DiscontinuedDate, driver, compName, "Disconnection Control");
 		CommonFunctions.selectData(companyName, driver, companyNameVariable, "Company Dropdown");
 	}
-	public HomePage navigateToNextPage(HashMap<String, String>data,WebDriver driver,WebElement el){
-	CommonFunctions.clickElement(el, driver, "Click on Home Page");	
+	public HomePage navigateToNextPage(HashMap<String, String>data,WebDriver driver){
+	CommonFunctions.clickElement(createThisComputer, driver, "Click on Home Page");	
 	HomePage ob =new HomePage();
 	return ob;
 	}
