@@ -15,6 +15,7 @@ import com.computerDB.util.CommonFunctions;
 
 public class HomePage  {
 	AddComputerPage addComputerPage;
+	EditComputerPage editComputerPage;
 
 	@FindBy(how=How.ID, using ="add")
 	 private WebElement addComputer;
@@ -47,6 +48,16 @@ public void ValidateCountComputer(WebDriver driver){
 		
 		
 	}
+public void selectComputer(WebDriver driver,HashMap<String, String> data){
+	try{
+		String xpath = "//a[contains(text(),"+ data.get("ComputeName") + ")]";
+		WebElement name = driver.findElement(By.xpath(xpath));
+		CommonFunctions.clickElement(name, driver, "Computer Name");
+	}
+	catch (Exception e) {
+		
+	}
+}
 public void fillDetails(WebDriver driver, HashMap<String, String> data){
 	String computerNameToSearch = data.get("ComputeName").toString();
 	CommonFunctions.fillData(searchComputerName, driver, computerNameToSearch, "Srearch Text Box");
@@ -63,6 +74,17 @@ public void fillDetails(WebDriver driver, HashMap<String, String> data){
 	public void NavigateToReadPage(WebDriver driver,HashMap<String, String> data){
 		CommonFunctions.clickElement(filterByName, driver, "Filter Button");
 		LoggingClass.getLogger().info("Page Loaded");
+		//return new HomePage();
+		
+	}
+	public EditComputerPage NavigateToEditComputerPage(WebDriver driver,HashMap<String, String> data){
+		CommonFunctions.clickElement(filterByName, driver, "Filter Button");
+		String xpath = "//a[contains(text(),'"+data.get("ComputeName") +"')]";
+		WebElement name = driver.findElement(By.xpath(xpath));
+		CommonFunctions.clickElement(name, driver, "Computer Name");
+		editComputerPage = PageFactory.initElements(driver, EditComputerPage.class);
+		LoggingClass.getLogger().info("Page Loaded");
+		return editComputerPage;
 		//return new HomePage();
 		
 	}

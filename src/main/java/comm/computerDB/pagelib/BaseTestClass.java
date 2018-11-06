@@ -1,7 +1,10 @@
 package comm.computerDB.pagelib;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
@@ -26,6 +29,9 @@ public class BaseTestClass {
 	public WebDriver driver;
 	public HomePage homePage;
 	public String testDataFilePath ;
+	public String configFilePath ;
+	Properties prop;
+	FileInputStream fis ;
 	public BaseTestClass() {
 		try {
 			PropertyConfigurator.configure(
@@ -33,10 +39,30 @@ public class BaseTestClass {
 							+ "java" + File.separator + "Resources" + File.separator + "log4j.properties");
 			 testDataFilePath = new File(".").getCanonicalPath() + File.separator + "src" + File.separator
 					+ "test" + File.separator + "java" + File.separator + "Resources" + File.separator + "DataSet.xlsx";
+			 configFilePath = new File(".").getCanonicalPath() + File.separator + "src" + File.separator
+						+ "test" + File.separator + "java" + File.separator + "Resources" + File.separator + "Config.properties";
+			 loadApplicationProperties(configFilePath);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	public void loadApplicationProperties(String path){
+		File file = new File(path);
+		try {
+			fis = new FileInputStream(file);
+			prop = new Properties();
+			try {
+				prop.load(fis);
+			} catch (IOException e) {
+				LoggingClass.getLogger().info("Somthing went wrong during the file opening!!");
+				LoggingClass.getLogger().info("Error Message--" + e.getMessage());
+			}
+		} catch (FileNotFoundException e) {
+			LoggingClass.getLogger().info("Somthing went wrong during the file searching!!");
+			LoggingClass.getLogger().info("Error Message--" + e.getMessage());
+		}
+		
 	}
 
 	public HomePage verifyPageLoad() {
@@ -64,7 +90,8 @@ public class BaseTestClass {
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		Thread.sleep(2000);
-		driver.get("http://computer-database.herokuapp.com/computers");
+		//driver.get("http://computer-database.herokuapp.com/computers");
+		driver.get(prop.getProperty("AppUrl"));
 		driver.manage().window().maximize();
 
 	}
@@ -72,6 +99,7 @@ public class BaseTestClass {
 	@AfterMethod
 	public void tearDownTest() {
 		driver.quit();
+
 
 	}
 

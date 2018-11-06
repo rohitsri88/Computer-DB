@@ -26,7 +26,7 @@ public class Read001 extends BaseTestClass {
 			homePage = verifyPageLoad();
 			homePage.fillDetails(driver, testData);
 			homePage.NavigateToReadPage(driver, testData);
-			Assert.assertTrue(homePage.verifyMessage(driver).contains("found"), "Required  not found!!");
+			Assert.assertTrue(!homePage.verifyMessage(driver).contains("No computers found"), "Required Comuter not found!!");
 			Assert.assertTrue(homePage.verifyMessage(driver).contains(testData.get("ComputeName").toString()),
 					"Required computer name not found!!");
 			Assert.assertTrue(homePage.verifyMessage(driver).contains(testData.get("Introduced").toString()),

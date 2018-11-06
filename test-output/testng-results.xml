@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="81351" started-at="2018-11-05T18:08:44Z" finished-at="2018-11-05T18:10:06Z">
+  <suite name="Default suite" duration-ms="29670" started-at="2018-11-06T01:22:50Z" finished-at="2018-11-06T01:23:20Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="81351" started-at="2018-11-05T18:08:44Z" finished-at="2018-11-05T18:10:06Z">
+    <test name="Default test" duration-ms="29670" started-at="2018-11-06T01:22:50Z" finished-at="2018-11-06T01:23:20Z">
       <class name="com.computerDB.read.Read001">
-        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.computerDB.read.Read001@6d7b4f4c]" name="setUp" is-config="true" duration-ms="75173" started-at="2018-11-05T18:08:44Z" finished-at="2018-11-05T18:09:59Z">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.computerDB.read.Read001@6d7b4f4c]" name="setUp" is-config="true" duration-ms="20060" started-at="2018-11-06T01:22:50Z" finished-at="2018-11-06T01:23:10Z">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="readPositiveTestCase()[pri:0, instance:com.computerDB.read.Read001@6d7b4f4c]" name="readPositiveTestCase" duration-ms="2662" started-at="2018-11-05T18:09:59Z" finished-at="2018-11-05T18:10:02Z">
+        <test-method status="PASS" signature="readPositiveTestCase()[pri:0, instance:com.computerDB.read.Read001@6d7b4f4c]" name="readPositiveTestCase" duration-ms="2467" started-at="2018-11-06T01:23:10Z" finished-at="2018-11-06T01:23:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- readPositiveTestCase -->
-        <test-method status="PASS" signature="tearDownTest()[pri:0, instance:com.computerDB.read.Read001@6d7b4f4c]" name="tearDownTest" is-config="true" duration-ms="3452" started-at="2018-11-05T18:10:02Z" finished-at="2018-11-05T18:10:06Z">
+        <test-method status="PASS" signature="tearDownTest()[pri:0, instance:com.computerDB.read.Read001@6d7b4f4c]" name="tearDownTest" is-config="true" duration-ms="7050" started-at="2018-11-06T01:23:13Z" finished-at="2018-11-06T01:23:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownTest -->
