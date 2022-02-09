@@ -35,7 +35,7 @@ public class ReadXlsx {
 		boolean flag = false;
 		try {
 			XlsxFileToRead = new FileInputStream(
-					"C:\\Users\\KOMALROHIT\\workspace\\ComputerDBAutoFramework\\src\\test\\java\\Resources\\DataSet.xlsx");
+					System.getProperty("user.dir")+"\\src\\test\\java\\Resources\\DataSet.xlsx");
 
 			workbook = new XSSFWorkbook(XlsxFileToRead);
 			sheet = workbook.getSheet("Create");
